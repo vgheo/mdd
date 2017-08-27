@@ -1,0 +1,62 @@
+<!--
+
+    Fully specialized modules
+        - allows constraint specification for uses
+            - configuration is only at project level
+    
+    Specific to C++ / CDT
+    
+    
+    Uses relation stored with source element
+    
+    
+-->
+
+<model>
+    <project name="M">
+        <configuration name="p1.release">
+        
+        </configuration>
+        <configuration name="p2.release">
+        
+        </configuration>
+        
+        <folder name="ei">
+            <headerFile name="a.hpp"/>
+        </folder>
+        
+        <folder name="s">
+            <sourceFile name="a.cpp"/>
+            <sourceFile name="c.cpp"/>
+            
+            <folder name="p1">
+                <sourceFile name="b.cpp"/>
+            </folder>
+            <folder name="p2">
+                <sourceFile name="b.cpp"/>
+            </folder>
+        </folder>
+        
+    </project>
+
+    <project name="O">
+        <folder name="ei">
+            <headerFile name="oa.hpp"/>
+        </folder>
+        <folder name="i">
+            <headerFile name="ob.hpp"/>
+        </folder>
+        
+        <folder name="s">
+            <sourceFile name="oa.cpp"/>
+            
+            <folder name="p1">
+                <sourceFile name="ob.cpp"/>
+            </folder>
+            <folder name="p2">
+                <sourceFile name="ob.cpp"/>
+            </folder>
+        </folder>
+    </project>
+    
+</model>

@@ -1,0 +1,54 @@
+<!--
+
+    Paritally differentiated modules
+        - leaf files
+    Uses relation stored at top level
+    
+    
+-->
+
+<model>
+    <module name="M">
+        <module name="ei">
+            <headerFile name="a.hpp"/>
+        </module>
+        
+        <module name="s">
+            <sourceFile name="a.cpp"/>
+            <sourceFile name="c.cpp"/>
+            
+            <module name="p1">
+                <sourceFile name="b.cpp"/>
+            </module>
+            <module name="p2">
+                <sourceFile name="b.cpp"/>
+            </module>
+        </module>
+    </module>
+
+    <module name="O">
+        <module name="ei">
+            <headerFile name="oa.hpp"/>
+        </module>
+        <module name="i">
+            <headerFile name="ob.hpp"/>
+        </module>
+        
+        <module name="s">
+            <sourceFile name="oa.cpp"/>
+            
+            <module name="p1">
+                <sourceFile name="ob.cpp"/>
+            </module>
+            <module name="p2">
+                <sourceFile name="ob.cpp"/>
+            </module>
+        </module>
+    </module>
+    
+    <uses source="M" target="O/ei"/>
+    <uses source="M/ei/a.hpp" target="O/ei/oa.hpp"/>
+    <uses source="O/s/oa.cpp" target="O/i/ob.hpp"/>
+    <uses source="O/s/p1/ob.cpp" target="O/i/ob.hpp"/>
+
+</model>

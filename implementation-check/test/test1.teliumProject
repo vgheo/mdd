@@ -1,0 +1,12 @@
+<teliumProject>
+	<configuration name="DEBUG">
+		<userIncludes>
+			<userInc path="../../B/ExpInc"/>
+			<userInc path="../../D/ExpInc"/>	
+		</userIncludes>
+		
+		<!-- other contents must be ignored -->
+		<aaa/>
+	</configuration>
+</teliumProject>
+

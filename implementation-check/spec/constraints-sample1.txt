@@ -1,0 +1,7 @@
+CONSTRAINTS
+
+C1. Use only header files from imported folders     
+    - detected by compiler
+    
+C2.
+    

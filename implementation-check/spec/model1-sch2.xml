@@ -1,0 +1,72 @@
+<!--
+
+    Fully specialized modules
+        - general schema 
+            - only module elements
+            - specific subtypes - by attribute 
+        - allows constraint specification for uses
+            - configuration is only at project level
+
+    Uses relation stored with source element
+    
+
+-->
+
+<model>
+    <module kind="project" name="M">
+        <configuration name="p1.release" platform="p1">
+            <!-- imported folders -->
+            <import ref="/O/ei"/>
+            
+        </configuration>
+        <configuration name="p2.release" platform="p2">
+        
+        </configuration>
+        
+        <module kind="folder" name="ei">
+            <module kind="headerFile" name="a.hpp">
+                <uses ref="O/ei/oa.hpp"/>
+            </module>
+        </module>
+        
+        <module kind="folder" name="s">
+            <module kind="sourceFile" name="a.cpp"/>
+            <module kind="sourceFile" name="c.cpp"/>
+            
+            <module name="p1">
+                <module kind="sourceFile" name="b.cpp"/>
+            </module>
+            <module name="p2">
+                <module kind="sourceFile" name="b.cpp"/>
+            </module>
+        </module>
+        
+    </module>
+
+    <module kind="project" name="O">
+        <module name="ei">
+            <module kind="headerFile" name="oa.hpp"/>
+        </module>
+        <module name="i">
+            <module kind="headerFile" name="ob.hpp"/>
+        </module>
+        
+        <module name="s">
+            <module kind="sourceFile" name="oa.cpp">
+                <uses ref="O/i/ob.hpp"/>
+            </module>
+            
+            <module name="p1">
+                <module kind="sourceFile" name="ob.cpp">
+                    <uses ref="O/i/ob.hpp"/>
+                </module>
+            </module>
+            <module name="p2">
+                <module kind="sourceFile" name="ob.cpp"/>
+            </module>
+        </module>
+    </module>
+    
+    
+
+</model>

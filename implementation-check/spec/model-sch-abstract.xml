@@ -1,0 +1,22 @@
+
+<!-- 
+    Abstract schema - akin UML
+    
+    independent of language/build system 
+    
+
+    Note: Solution can combine multiple models of various abstraction levels.
+        - not necessarily 1 source level and 1 design level
+
+
+    module  = Package<<module>>
+        - represents a code unit that results in a library or executable at build
+-->
+<model>
+    <module name="M" type="lib">     
+        <use ref="/O"/>        
+    </module>
+    
+    <module name="O" type="lib" >
+    </module>
+</model>
