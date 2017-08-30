@@ -9,14 +9,19 @@ from dexml import fields
 
 
 class userInc(dexml.Model):
-	path = fields.String()
+	value = fields.String()
 
 
-class configuration(dexml.Model):
+class config(dexml.Model):
 	name = fields.String()
-	userIncludes = fields.List(userInc, tagname="userIncludes")
+	binaryName=fields.String()
+	hardware=fields.String()
+	userIncs= fields.List(userInc, tagname="userIncs")
 
-class teliumProject(dexml.Model):
-	configurations = fields.List(configuration)
+class projectDescription(dexml.Model):
+	activeConfig=fields.String()
+	enableUsingCpp=fields.Boolean()
+	projectType=fields.String()
+	configs = fields.List(config, tagname="configs")
 	
 

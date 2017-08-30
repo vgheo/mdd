@@ -13,3 +13,5 @@ class TestTelium(unittest.TestCase):
     def testRender(self):
         print self.tp1.render(encoding="UTF-8", pretty=True)
 
+    def testRender2(self):
+        f = open()
